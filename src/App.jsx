@@ -1,9 +1,8 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
+
+function CounterApp() {
   const [count, setCount] = useState(0)
 
   const addPlus = (()=> {
@@ -19,30 +18,18 @@ function App() {
   })
 
   return (
-    <>
-     <h1>Counter App</h1>
-     <h3>{count}</h3>
-    <button onClick={addPlus} style={btn_1}>+</button>
-    <button onClick={addmines} style={btn_2}>-</button>
-    <button onClick={reset} style={btn_3}>Reset</button>
-    </>
+    <div className='container'>
+      <div className='counterAppDiv'>
+      <h1>Counter App</h1>
+      <h3>{count}</h3>
+      <div className='buttonGroup'>
+    <button className='btn-1' onClick={addPlus} >+</button>
+    <button className='btn-2' onClick={addmines} >-</button>
+    <button className='btn-3' onClick={reset} >Reset</button>
+    </div>
+    </div>
+    </div>
   )
 }
 
-export default App
-
-const btn_1 = {
-  marginRight: '20px',
-  backgroundColor: 'green',
-  textAlign: 'center'
-}
-
-const btn_2 = {
-  marginRight: '60px',
-  backgroundColor: 'red',
-  textAlign: 'center'
-}
-
-const btn_3 = {
-  textAlign: 'center'
-}
+export default CounterApp
